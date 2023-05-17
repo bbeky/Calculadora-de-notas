@@ -1,0 +1,23 @@
+<div>
+  <label for="prova1">Nota da Prova I:</label>
+  <input type="number" id="prova1">
+</div>
+<div>
+  <label for="prova2">Nota da Prova II:</label>
+  <input type="number" id="prova2">
+</div>
+<div>
+  <label for="provaAberta">Nota da Prova Aberta:</label>
+  <input type="number" id="provaAberta">
+</div>
+<button id="calcular" onclick="calcularNota()">Calcular Nota Final</button>
+<div id="notaFinal"></div>
+<script>
+  function calcularNota() {
+    const prova1 = parseFloat(document.getElementById("prova1").value);
+    const prova2 = parseFloat(document.getElementById("prova2").value);
+    const provaAberta = parseFloat(document.getElementById("provaAberta").value);
+    const notaFinal = (prova1 * 0.4) + (((prova2 * 0.7) + (provaAberta * 0.3)) * 0.6);
+    document.getElementById("notaFinal").innerHTML = "Sua nota final é " + notaFinal.toFixed(1);
+  }
+</script>
